@@ -14,13 +14,16 @@ export default class ListPageFir extends Component {
   toMain(){
     this.props.navigator.pop();
   }
+  toDetailShow(){
+    this.props.navigator.push({id:"DetailShow",title:"DetailShow",data:"goto DetailShow"});
+  }
   render() {
     let arr=[{id:1},{id:2},{id:3},{id:4}]
     let tesumap= arr.map(function (itm) {
       return (
       <View style={[styles.mainContiner,styles.marginBottom10,styles.paddingTop15,styles.paddingLeft15,styles.flexDirectionRow,styles.maxHeight150]} key={itm.id} >
         <View style={[styles.flex,styles.overflowHide]}>
-          <Image style={styles.imgLeftStyle}  source={require('../img/tabacon/tbDev.png')}/>
+          <Image style={styles.imgLeftStyle}  source={require('../img/tabacon/pndikn.png')}/>
         </View>
         <View style={[styles.flex2,styles.padding10,styles.alignItemsStart,styles.flexStart]}>
           <Text style={[styles.flex,styles.height30]}>Tirtle·amin</Text>

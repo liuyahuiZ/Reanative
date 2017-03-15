@@ -18,21 +18,29 @@ export default class Person extends Component {
   toList(){
     this.props.navigator.push({id:"list",title:"List",data:"Passed from List screen"});
   }
+  toCharts(){
+    this.props.navigator.push({id:"MyCharts",title:"MyCharts",data:"Passed from MyCharts screen"});
+  }
+  toSet(){
+    this.props.navigator.push({id:"Setting",title:"Setting",data:"Passed from List screen"});
+  }
+  toAppStorage(){
+    this.props.navigator.push({id:"AppStorage",title:"AppStorage",data:"Passed from List screen"});
+  }
   render() {
     return (
       <View style={styles.NoHeaderView}>
-      <StatusBar backgroundColor="blue" barStyle="light-content" />
-        <Image style={[styles.backgroundVideo,styles.halfHeight]} blurRadius={5} source={require('../img/banner/bn3.png')}/>
+        <Image style={[styles.backgroundVideo,styles.halfHeight]} blurRadius={2} source={require('../img/tabacon/sjkq.png')}/>
         <ScrollView style={styles.noHeader}>
           <View style={[styles.flexUtilCenter,styles.padding10]}>
-            <TouchableHighlight
+            <TouchableOpacity
              style={styles.button}
              onPress={this.toMain.bind(this)}
              underlayColor="#F5FCFF">
                <View style={[styles.round,styles.overflowHide]}>
                 <Image style={{flex:1,width:100}} blurRadius={1} source={require('../img/tabacon/personDef.png')}/>
                </View>
-            </TouchableHighlight>
+            </TouchableOpacity>
           </View>
           <View style={[styles.flex,styles.flexDirectionRow,styles.padding10]}>
             <View style={[styles.flex,styles.alignItemsCenter]}>
@@ -60,11 +68,11 @@ export default class Person extends Component {
           </View>
           </TouchableHighlight>
           <TouchableHighlight
-           onPress={this.toList.bind(this)}
+           onPress={this.toCharts.bind(this)}
            underlayColor="#F5FCFF">
           <View style={styles.list}>
             <View style={{flex:1,alignItems: 'center'}}><Icon name='briefcase' color='#999' size={23} /></View>
-            <View style={{flex:4,alignItems: 'flex-start'}}><Text>Briefcase</Text></View>
+            <View style={{flex:4,alignItems: 'flex-start'}}><Text>MyCharts</Text></View>
             <View style={{flex:2,alignItems: 'flex-end'}}><Icon name='angle-right' color='#999' size={23} /></View>
           </View>
           </TouchableHighlight>
@@ -78,11 +86,11 @@ export default class Person extends Component {
           </View>
           </TouchableHighlight>
           <TouchableHighlight
-           onPress={this.toList.bind(this)}
+           onPress={this.toAppStorage.bind(this)}
            underlayColor="#F5FCFF" style={[styles.marginTop10]}>
-          <View style={styles.list}>
+          <View style={[styles.list,styles.borderTop]}>
             <View style={{flex:1,alignItems: 'center'}}><Icon name='balance-scale' color='#999' size={23} /></View>
-            <View style={{flex:4,alignItems: 'flex-start'}}><Text>Balance</Text></View>
+            <View style={{flex:4,alignItems: 'flex-start'}}><Text>AppStorage</Text></View>
             <View style={{flex:2,alignItems: 'flex-end'}}><Icon name='angle-right' color='#999' size={23} /></View>
           </View>
           </TouchableHighlight>
@@ -92,6 +100,15 @@ export default class Person extends Component {
           <View style={styles.list}>
             <View style={{flex:1,alignItems: 'center'}}><Icon name='id-card-o' color='#999' size={23} /></View>
             <View style={{flex:4,alignItems: 'flex-start'}}><Text>IdCard</Text></View>
+            <View style={{flex:2,alignItems: 'flex-end'}}><Icon name='angle-right' color='#999' size={23} /></View>
+          </View>
+          </TouchableHighlight>
+          <TouchableHighlight
+           onPress={this.toSet.bind(this)}
+           underlayColor="#F5FCFF">
+          <View style={styles.list}>
+            <View style={{flex:1,alignItems: 'center'}}><Icon name='cog' color='#999' size={23} /></View>
+            <View style={{flex:4,alignItems: 'flex-start'}}><Text>Setting</Text></View>
             <View style={{flex:2,alignItems: 'flex-end'}}><Icon name='angle-right' color='#999' size={23} /></View>
           </View>
           </TouchableHighlight>

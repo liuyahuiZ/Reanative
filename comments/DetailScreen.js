@@ -108,10 +108,10 @@ export default class DetailScreen extends Component {
            tabBarActiveTextColor='#111'
            tabBarInactiveTextColor='#666'>
             <View tabLabel="React" style={styles.flex}>
-              <ListPage/>
+              <ListPage navigator={this.props.navigator}/>
             </View>
             <View tabLabel="Rct" style={styles.flex}>
-              <ListPageFir/>
+              <ListPageFir navigator={this.props.navigator}/>
             </View>
             <View tabLabel="face" style={styles.flex}>
               <Text>Page 3</Text>

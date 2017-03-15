@@ -24,10 +24,13 @@ export default class MainScreen extends Component {
   toPop(){
     this.props.navigator.push({id:"pop",title:"pop",data:"goto pop"});
   }
+  toDetailShow(){
+    this.props.navigator.push({id:"DetailShow",title:"DetailShow",data:"goto DetailShow"});
+  }
   toLogin(){
     this.props.navigator.push({id:"Login",title:"Login",data:"goto Login"});
   }
-  
+
   _onRefresh() {
     this.setState({isRefreshing: true});
     setTimeout(() => {
@@ -53,26 +56,34 @@ export default class MainScreen extends Component {
           />
         }>
         <Carousel width={375} delay={5000} inactiveIndicatorText= '•'
-        indicatorText= '-' hideIndicators={false} indicatorSpace={20} indicatorColor="#EB8C0C"
+        indicatorText= '•' hideIndicators={false} indicatorSpace={20} indicatorColor="#222"
          inactiveIndicatorColor="#fff" indicatorSize={30} indicatorAtBottom={true} indicatorOffset={10} loop={true}>
           <View style={styles.carview}>
-            <Image style={{flex:1,width:375}}  source={require('../img/banner/bn1.png')}/>
+            <Image style={{flex:1,width:375}}  source={require('../img/tabacon/sjkq.png')}/>
           </View>
           <View style={styles.carview}>
             <Image style={{flex:1,width:375}} source={require('../img/banner/bn3.png')}/>
           </View>
           <View style={styles.carview}>
-            <Image style={{flex:1,width:375}} source={require('../img/banner/bn2.jpg')}/>
+            <Image style={{flex:1,width:375}} source={require('../img/tabacon/dfb.png')}/>
           </View>
         </Carousel>
         <View style={[styles.mainContiner,styles.marginTop10,styles.padding10]}>
           <View style={[styles.flex,styles.flexStart]}><Text>Tirtle·amin</Text></View>
           <View style={[styles.flex,styles.flexStart,styles.flexDirectionRow]}>
             <View style={[styles.homeItemLeft,styles.borderRadiusLittle,styles.overflowHide]}>
-              <Image style={styles.imgStyle}  source={require('../img/tabacon/tbDef1.jpg')}/>
+            <TouchableOpacity
+             onPress={this.toDetailShow.bind(this)}
+             underlayColor="#F5FCFF">
+              <Image style={styles.imgStyle}  source={require('../img/tabacon/poiap.png')}/>
+              </TouchableOpacity>
             </View>
             <View style={[styles.homeItemRight,styles.borderRadiusLittle,styles.overflowHide]}>
+            <TouchableOpacity
+             onPress={this.toDetailShow.bind(this)}
+             underlayColor="#F5FCFF">
               <Image style={styles.imgStyle}  source={require('../img/tabacon/tbDe2.png')}/>
+              </TouchableOpacity>
             </View>
           </View>
           <View style={[styles.flex,styles.flexStart,styles.flexDirectionRow]}>
@@ -89,10 +100,27 @@ export default class MainScreen extends Component {
         </TouchableHighlight>
 
         <View style={[styles.mainContiner,styles.marginTop10,styles.padding10]}>
+          <ScrollView style={[styles.flex,styles.flexDirectionRow]} horizontal={true}>
+              <View style={[styles.homeItem,styles.borderRadiusLittle,styles.overflowHide]}>
+                <Image style={styles.imgStyle}  source={require('../img/tabacon/tbDef1.jpg')}/>
+              </View>
+              <View style={[styles.homeItem,styles.borderRadiusLittle,styles.overflowHide]}>
+                <Image style={styles.imgStyle}  source={require('../img/tabacon/lkj.png')}/>
+              </View>
+              <View style={[styles.homeItem,styles.borderRadiusLittle,styles.overflowHide]}>
+                <Image style={styles.imgStyle}  source={require('../img/tabacon/tbDev.png')}/>
+              </View>
+              <View style={[styles.homeItem,styles.borderRadiusLittle,styles.overflowHide]}>
+                <Image style={styles.imgStyle}  source={require('../img/tabacon/tbDeo.png')}/>
+              </View>
+          </ScrollView>
+        </View>
+
+        <View style={[styles.mainContiner,styles.marginTop10,styles.padding10]}>
           <View style={[styles.flex,styles.flexStart]}><Text>Tirtle·amin</Text></View>
           <View style={[styles.flex,styles.flexStart,styles.flexDirectionColumn]}>
             <View style={[styles.flex,styles.overflowHide,styles.marginTop10]}>
-              <Image style={styles.imgAllStyle}  source={require('../img/tabacon/tbDef1.jpg')}/>
+              <Image style={styles.imgAllStyle}  source={require('../img/tabacon/iao.png')}/>
             </View>
             <View style={[styles.flex,styles.overflowHide,styles.marginTop10,styles.flexDirectionRow]}>
               <Text>this is a impresa</Text>

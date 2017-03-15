@@ -10,6 +10,10 @@ import Person from '../comments/Home'
 import Pop from '../comments/pop'
 import Message from '../comments/Message'
 import Login from '../comments/Login'
+import MyCharts from '../comments/MyCharts'
+import Setting from '../comments/Setting'
+import AppStorage from '../comments/AppStorage'
+import DetailShow from '../comments/DetailShow'
 
 export default class Routes extends Component  {
   constructor(props) {
@@ -46,6 +50,14 @@ export default class Routes extends Component  {
       return (<Message navigator={this.props.nav} data={this.props.data} title="Message"/ >);
     }else if(this.props.id=='Login'){
       return (<Login navigator={this.props.nav} data={this.props.data} title="Login"/ >);
+    }else if(this.props.id=='MyCharts'){
+      return (<MyCharts navigator={this.props.nav} data={this.props.data} title="MyCharts"/ >);
+    }else if(this.props.id=='Setting'){
+      return (<Setting navigator={this.props.nav} data={this.props.data} title="Setting"/ >);
+    }else if(this.props.id=='AppStorage'){
+      return (<AppStorage navigator={this.props.nav} data={this.props.data} title="AppStorage"/ >);
+    }else if(this.props.id=='DetailShow'){
+      return (<DetailShow navigator={this.props.nav} data={this.props.data} title="DetailShow"/ >);
     }
 
   }

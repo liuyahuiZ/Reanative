@@ -41,20 +41,20 @@ export default class Home extends Component {
         <View style={styles.tabBottom}>
           <TouchableOpacity style={styles.tab} onPress={this.tab.bind(this,'Main','Show')} underlayColor="#F5FCFF">
            <View style={styles.flexUtilCenter}>
-           <Icon name='home' color={tabstatus=='Main'?'black':'#999'} size={23}></Icon>
-           <Text >Main</Text>
+           <Icon name='home' color={tabstatus=='Main'?'#F96C43':'#999'} size={23}></Icon>
+           <Text style={{color:tabstatus=='Main'?'#F96C43':'#999'}}>Main</Text>
            </View>
           </TouchableOpacity>
           <TouchableOpacity style={styles.tab} onPress={this.tab.bind(this,'Detail','Show')} underlayColor="#F5FCFF">
             <View style={styles.flexUtilCenter}>
-              <Icon name='rocket' color={tabstatus=='Detail'?'black':'#999'} size={23}></Icon>
-              <Text >Detail</Text>
+              <Icon name='rocket' color={tabstatus=='Detail'?'#F96C43':'#999'} size={23}></Icon>
+              <Text style={{color:tabstatus=='Detail'?'#F96C43':'#999'}}>Detail</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity style={styles.tab} onPress={this.tab.bind(this,'Person','Hide')} underlayColor="#F5FCFF">
             <View style={styles.flexUtilCenter}>
-              <Icon name='user-o' color={tabstatus=='Person'?'black':'#999'} size={23}></Icon>
-              <Text >Person</Text>
+              <Icon name='user-o' color={tabstatus=='Person'?'#F96C43':'#999'} size={23}></Icon>
+              <Text style={{color:tabstatus=='Person'?'#F96C43':'#999'}}>Person</Text>
             </View>
           </TouchableOpacity>
         </View>

@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     width:13,height:26,
   },
   container: {
-    flex: 1,backgroundColor:'#EDF1F2',
+    flex: 1,backgroundColor:'#F6F6F6',
     justifyContent: 'flex-end',
   },
   //carview
@@ -32,13 +32,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',backgroundColor: '#ccc',
   },
   containView:{
-    flex: 1,backgroundColor:'#EDF1F2',
+    flex: 1,backgroundColor:'#F6F6F6',
   },
   detailContainView:{
-    flex:1,justifyContent: 'center',backgroundColor:'#EDF1F2',
+    flex:1,justifyContent: 'center',backgroundColor:'#F6F6F6',
   },
   NoHeaderView:{
-    flex:1,justifyContent: 'center',backgroundColor:'#EDF1F2',paddingTop:20
+    flex:1,justifyContent: 'center',backgroundColor:'#F6F6F6',paddingTop:20
   },
   blackText:{
     fontSize:15,textAlign:'center',
@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
   },
   homeItemLeft:{flex:1,marginTop:10,marginRight:10,backgroundColor:'#999',height:90},
   homeItemRight:{flex:1,marginTop:10,backgroundColor:'#999',height:90},
+  homeItem:{flex:1,marginRight:10,backgroundColor:'#999',height:90},
   // layout
   flexStart:{justifyContent:'flex-start'},
   flexCenter:{justifyContent:'center'},
@@ -110,10 +111,17 @@ const styles = StyleSheet.create({
   height30:{height:30},
   height20:{height:10},
   minHeight150:{minHeight:150},
+  maxHeight70:{maxHeight:70},
+  maxHeight80:{maxHeight:80},
   maxHeight150:{maxHeight:150},
   maxHeight250:{maxHeight:250},
   maxHeight300:{maxHeight:300},
   loginWidth:{width:Dimensions.get('window').width*0.8},
+  // fontSize
+  fontSize20:{fontSize:20},
+  fontSize18:{fontSize:18},
+  fontSize15:{fontSize:15},
+  fontSize12:{fontSize:12},
   // button
   smallButtom:{flex:1,width:100,height:50,justifyContent:'center',alignItems:'center'},
   medileButtom:{width:200,height:50,justifyContent:'center',alignItems:'center'},
@@ -122,16 +130,19 @@ const styles = StyleSheet.create({
   // backgroundColor
   bgTrans:{backgroundColor:'transparent'},
   bgshow:{backgroundColor:'#fff'},
+  bgf6:{backgroundColor:'#F6F6F6'},
   bgBottonBlue:{backgroundColor:'#66A0E0'},
   bgeee:{backgroundColor:'#eee'},
   bgBottonGre:{backgroundColor:'#FDB045',opacity:0.8},
   loginBg:{backgroundColor:'#fff',opacity:0.5},
   // color
   textColorWhite:{color:"#fff"},
+  textColorGrray:{color:"#8D8D8D"},
   // border
   borderRadiusLittle:{borderRadius:3},
   borderRadiusSmial:{borderRadius:6},
   borderRadiusLarge:{borderRadius:60},
+  borderTop:{borderStyle:'solid',borderTopColor:'#EAEDF2',borderTopWidth:1,},
   borderBottom:{borderStyle:'solid',borderBottomColor:'#EAEDF2',borderBottomWidth:1,},
   borderRight:{borderStyle:'solid',borderRightColor:'#999',borderRightWidth:1,},
   // image
@@ -163,8 +174,32 @@ const styles = StyleSheet.create({
     right: 0,
     width:Dimensions.get('window').width,
   },
+  WebView:{
+    flex:1,
+    width:Dimensions.get('window').width,
+    height:Dimensions.get('window').height,
+  },
   loading:{
     flex:1,height:64,marginTop:-64
   },
+  chart: {
+      width: 200,
+      height: 200,
+  },
+  welcome: {
+    fontSize: 14,
+    textAlign: 'left',
+    margin: 10,
+  },
+  content:{
+    fontSize: 13,
+    textAlign: 'left',
+    margin: 10,
+  },
+   buttonpin: {
+    margin:5,
+    padding: 15,
+  },
+
   });
 export default { styles }
