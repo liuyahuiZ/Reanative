@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 import {Dimensions} from 'react-native';
 const {WinHeight, WinWidth} = Dimensions.get('window');
+import Util from './util';
 const styles = StyleSheet.create({
   home: {
     flex: 1,marginTop:32
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
   navBarTitleText: {
    color: '#373E4D',fontWeight: '500',marginVertical: 9,
   },
-  navBarLeftButton: {paddingLeft: 10,},
+  navBarLeftButton: {paddingLeft: 10,paddingRight: 10,},
   navBarRightButton: {paddingRight: 10,paddingTop:10},
   navBarButtonText: {color: '#5890FF',},
 
@@ -97,6 +98,9 @@ const styles = StyleSheet.create({
   paddingLeft15:{paddingLeft:15},
   marginTop10:{marginTop:10},
   marginTop22:{marginTop:22},
+  marginTop30:{marginTop:30},
+  marginTop35:{marginTop:35},
+  marginTop40:{marginTop:40},
   marginRight5:{marginRight:5},
   marginBottom10:{marginBottom:10},
   marginLeft10:{marginLeft:10},
@@ -117,6 +121,10 @@ const styles = StyleSheet.create({
   maxHeight250:{maxHeight:250},
   maxHeight300:{maxHeight:300},
   loginWidth:{width:Dimensions.get('window').width*0.8},
+  midleWidth:{width:Dimensions.get('window').width*0.6},
+  relative:{position:'relative'},
+  popUp:{position:'absolute',top:0,left:Dimensions.get('window').width*0.2,
+  width:Dimensions.get('window').width*0.6,height:100,backgroundColor:'#fff',borderRadius:6},
   // fontSize
   fontSize20:{fontSize:20},
   fontSize18:{fontSize:18},
@@ -134,10 +142,12 @@ const styles = StyleSheet.create({
   bgBottonBlue:{backgroundColor:'#66A0E0'},
   bgeee:{backgroundColor:'#eee'},
   bgBottonGre:{backgroundColor:'#FDB045',opacity:0.8},
+  bg8d:{backgroundColor:'#8D8D8D'},
   loginBg:{backgroundColor:'#fff',opacity:0.5},
   // color
   textColorWhite:{color:"#fff"},
   textColorGrray:{color:"#8D8D8D"},
+  IconColorOrgiange:{color:"#8D8D8D"},
   // border
   borderRadiusLittle:{borderRadius:3},
   borderRadiusSmial:{borderRadius:6},
@@ -145,6 +155,7 @@ const styles = StyleSheet.create({
   borderTop:{borderStyle:'solid',borderTopColor:'#EAEDF2',borderTopWidth:1,},
   borderBottom:{borderStyle:'solid',borderBottomColor:'#EAEDF2',borderBottomWidth:1,},
   borderRight:{borderStyle:'solid',borderRightColor:'#999',borderRightWidth:1,},
+  flexWrap:{flexWrap:'wrap'},
   // image
   imgStyle:{
            width:Dimensions.get('window').width*0.45,
@@ -165,6 +176,10 @@ const styles = StyleSheet.create({
            width:Dimensions.get('window').width,
            height:170,
            resizeMode:'cover'
+  },
+  absoluteIcon:{
+    position:'absolute',
+    top:10,right:11,fontSize:5,color:'#F96C43'
   },
   backgroundVideo: {
     position: 'absolute',
@@ -199,6 +214,34 @@ const styles = StyleSheet.create({
    buttonpin: {
     margin:5,
     padding: 15,
+  },
+  touchBox:{
+    width: Util.size.width/4,
+    height: Util.size.width/4,
+    backgroundColor:"#fff",
+    borderWidth: Util.pixel,
+    borderColor:"#EAEDF2",
+    alignItems:'center',
+    justifyContent:'center'
+  },
+  iconItem:{
+    alignItems:'center',
+    justifyContent:'center',
+    width: Util.size.width/4,
+  },
+  boxIcon:{
+    position:"relative",
+    top:1,
+    fontSize:35,
+    width:35,height:35,
+  },
+  boxText:{
+    width: Util.size.width/4,
+    position:"relative",
+    bottom:-10,
+    height:20,
+    textAlign:"center",
+    backgroundColor:"transparent"
   },
 
   });

@@ -29,12 +29,12 @@ export default class ListPageFir extends Component {
           <Text style={[styles.flex,styles.height30]}>Tirtle·amin</Text>
           <Text style={[styles.flex2,styles.height60]}>Tirtle aiaasdm asdas amda asda is a asdk asd</Text>
           <View style={[styles.flex,styles.overflowHide,styles.marginTop10,styles.flexDirectionRow,styles.alignItemsEnd]}>
-            <Text>timpresa</Text>
+            <Text style={[styles.textColorGrray]}>timpresa</Text>
             <View style={[styles.flex2,styles.alignItemsEnd,styles.flexDirectionRowReverse]}>
-              <Icon name='eye'  color='black' size={15}></Icon>
-              <Text style={[styles.marginRight5]}>See</Text>
-              <Icon style={[styles.marginRight5]} name='comment'  color='black' size={15}></Icon>
-              <Text style={[styles.marginRight5]}>Com</Text>
+              <Icon name='eye' style={[styles.IconColorOrgiange]} size={15}></Icon>
+              <Text style={[styles.marginRight5,styles.textColorGrray]}>See</Text>
+              <Icon style={[styles.marginRight5,styles.IconColorOrgiange]} name='comment'  size={15}></Icon>
+              <Text style={[styles.marginRight5,styles.textColorGrray]}>Com</Text>
             </View>
           </View>
         </View>

@@ -4,7 +4,8 @@ import { View,ScrollView, RefreshControl,Text,StyleSheet, TouchableHighlight,Ani
 import style from '../service/styles'
 import Bottom from './Bottom'
 import Carousel from 'react-native-carousel'
-import Icon from 'react-native-vector-icons/FontAwesome'
+import Icon from 'react-native-vector-icons/Ionicons';
+import IconFA from 'react-native-vector-icons/FontAwesome';
 const styles=style.styles
 
 export default class MainScreen extends Component {
@@ -16,19 +17,87 @@ export default class MainScreen extends Component {
       loaded: 0,
       rowData: Array.from(new Array(20)).map(
         (val, i) => ({text: 'Initial row ' + i, clicks: 0})),
+      days: [{
+          key: 0,
+          title: "pop",
+          isFA: true,
+          icon: "contao",
+          size: 48,
+          color: "#ff856c",
+          hideNav: false,
+          route:'pop'
+        }, {
+          key: 2,
+          title: "Login",
+          isFA: true,
+          icon: "rebel",
+          size: 50,
+          color: "#494849",
+          hideNav: true,
+          route:'Login'
+        }, {
+          key: 3,
+          title: "Clock",
+          isFA: false,
+          icon: "ios-stopwatch",
+          size: 50,
+          color: "#FF9A05",
+          hideNav: false,
+          route:'Clock'
+        }, {
+          key: 4,
+          title: "PassLock",
+          isFA: true,
+          icon: "lock",
+          size: 50,
+          color: "#00D204",
+          hideNav: false,
+          route:'PassLock'
+        }, {
+          key: 5,
+          title: "TouchMove",
+          isFA: true,
+          icon: "spotify",
+          size: 50,
+          color: "#777",
+          hideNav: true,
+          route:'TouchMove'
+        },{
+          key: 6,
+          title: "TwiterUI",
+          isFA: false,
+          icon: "logo-twitter",
+          size: 50,
+          color: "#2aa2ef",
+          hideNav: true,
+          route:'TwiterUI'
+        },{
+          key: 7,
+          title: "Swip",
+          isFA: true,
+          icon: "heart",
+          size: 50,
+          color: "#F96C43",
+          hideNav: true,
+          route:'Swip'
+        },{
+          key: 8,
+          title: "AllComment",
+          isFA: true,
+          icon: "delicious",
+          size: 50,
+          color: "#F96C43",
+          hideNav: true,
+          route:'AllComment'
+        }]
     }
   }
   toDetail(){
     this.props.navigator.push({id:"detail",title:"Detail",data:"Passed from Main screen"});
   }
-  toPop(){
-    this.props.navigator.push({id:"pop",title:"pop",data:"goto pop"});
-  }
-  toDetailShow(){
-    this.props.navigator.push({id:"DetailShow",title:"DetailShow",data:"goto DetailShow"});
-  }
-  toLogin(){
-    this.props.navigator.push({id:"Login",title:"Login",data:"goto Login"});
+
+  toNaviger(route){
+    this.props.navigator.push({id:route,title:route,data:"goto Login"});
   }
 
   _onRefresh() {
@@ -42,6 +111,23 @@ export default class MainScreen extends Component {
     }, 3000);
   }
   render() {
+    let boxes = this.state.days.map((elem, index) => {
+      let top = Math.floor(index/4)*this._width;
+      let left = (index%4)*this._width;
+      return(
+        <View ref={"box"+index}  key={elem.key} style={[styles.touchBox,{top,left}]} underlayColor="#eee">
+          <TouchableOpacity onPress={this.toNaviger.bind(this,elem.route)} >
+          <View style={styles.boxContainer} ref={"box"+index}  key={elem.key}>
+          <View style={styles.iconItem}>
+            {elem.isFA? <IconFA size={elem.size} name={elem.icon} style={[styles.boxIcon,{color:elem.color}]}></IconFA>:
+              <Icon size={elem.size} name={elem.icon} style={[styles.boxIcon,{color:elem.color}]}></Icon>}
+            </View>
+            <Text style={styles.boxText}>{elem.title}</Text>
+          </View>
+          </TouchableOpacity>
+        </View>
+      );
+    })
     return (
       <View style={styles.containView}>
       <ScrollView style={styles.hasHeader} scrollEventThrottle={200} refreshControl={
@@ -68,19 +154,24 @@ export default class MainScreen extends Component {
             <Image style={{flex:1,width:375}} source={require('../img/tabacon/dfb.png')}/>
           </View>
         </Carousel>
+
+        <View style={[styles.flex,styles.flexDirectionRow,styles.flexWrap,styles.marginTop10]}>
+        {boxes}
+        </View>
+
         <View style={[styles.mainContiner,styles.marginTop10,styles.padding10]}>
           <View style={[styles.flex,styles.flexStart]}><Text>Tirtle·amin</Text></View>
           <View style={[styles.flex,styles.flexStart,styles.flexDirectionRow]}>
             <View style={[styles.homeItemLeft,styles.borderRadiusLittle,styles.overflowHide]}>
             <TouchableOpacity
-             onPress={this.toDetailShow.bind(this)}
+             onPress={this.toNaviger.bind(this,'DetailShow')}
              underlayColor="#F5FCFF">
               <Image style={styles.imgStyle}  source={require('../img/tabacon/poiap.png')}/>
               </TouchableOpacity>
             </View>
             <View style={[styles.homeItemRight,styles.borderRadiusLittle,styles.overflowHide]}>
             <TouchableOpacity
-             onPress={this.toDetailShow.bind(this)}
+             onPress={this.toNaviger.bind(this,'DetailShow')}
              underlayColor="#F5FCFF">
               <Image style={styles.imgStyle}  source={require('../img/tabacon/tbDe2.png')}/>
               </TouchableOpacity>
@@ -125,17 +216,12 @@ export default class MainScreen extends Component {
             <View style={[styles.flex,styles.overflowHide,styles.marginTop10,styles.flexDirectionRow]}>
               <Text>this is a impresa</Text>
               <View style={{flex:2,alignItems: 'flex-end'}}>
-                <Icon name='comment'  color='black' size={20}></Icon>
+                <IconFA name='comment'  style={[styles.IconColorOrgiange]} size={20}></IconFA>
               </View>
             </View>
           </View>
         </View>
-        <TouchableHighlight style={[styles.bgshow,styles.padding10,styles.marginTop10]} onPress={this.toPop.bind(this)} underlayColor="#B5B5B5">
-           <Text style={styles.blackText}>=>goto pop</Text>
-        </TouchableHighlight>
-        <TouchableHighlight style={[styles.bgshow,styles.padding10,styles.marginTop10]} onPress={this.toLogin.bind(this)} underlayColor="#B5B5B5">
-           <Text style={styles.blackText}>=>goto Login</Text>
-        </TouchableHighlight>
+
         </ScrollView>
       </View>
     )

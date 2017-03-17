@@ -53,14 +53,14 @@ export default class Reanative extends Component {
             onPress={() => navigator.pop()}
             style={styles.navBarLeftButton}>
             <Text style={[styles.navBarText, styles.navBarButtonText]}>
-            <Icon name='angle-left' color='black' size={30} />
+            <Icon name='angle-left' color='black' size={20} />
             </Text>
           </TouchableOpacity>
         );
       },
       RightButton: function(route, navigator, index, navState) {
         if (route.id === 'main') {
-          return (  <TouchableOpacity style={styles.navBarRightButton} onPress={o.toMessage.bind(o,navigator)}><Icon name='bell' color='#999' size={18} /></TouchableOpacity>);
+          return (  <TouchableOpacity style={[styles.navBarRightButton,styles.relative]} onPress={o.toMessage.bind(o,navigator)}><Icon name='circle'  style={[styles.absoluteIcon]}/><Icon name='bell' color='#999' size={20} /></TouchableOpacity>);
         }
       },
       Title: function(route, navigator, index, navState) {

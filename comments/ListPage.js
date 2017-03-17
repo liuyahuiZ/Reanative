@@ -32,9 +32,9 @@ export default class ListPage extends Component {
             <Image style={styles.imgAllStyle}  source={require('../img/tabacon/sjkq.png')}/>
           </View>
           <View style={[styles.flex,styles.overflowHide,styles.marginTop10,styles.flexDirectionRow]}>
-            <Text>this is a impresa</Text>
+            <Text style={[styles.textColorGrray]}>this is a impresa</Text>
             <View style={{flex:2,alignItems: 'flex-end'}}>
-              <Icon name='comment'  color='black' size={20}></Icon>
+              <Icon name='comment'  style={[styles.IconColorOrgiange]} size={20}></Icon>
             </View>
           </View>
         </View>

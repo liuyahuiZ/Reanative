@@ -14,6 +14,13 @@ import MyCharts from '../comments/MyCharts'
 import Setting from '../comments/Setting'
 import AppStorage from '../comments/AppStorage'
 import DetailShow from '../comments/DetailShow'
+import Clock from '../comments/Clock'
+import PassLock from '../comments/littleApp/PassLock'
+import TouchMove from '../comments/littleApp/TouchMove'
+import TwiterUI from '../comments/littleApp/TwiterUI'
+import Swip from '../comments/littleApp/Swip'
+import AllComment from '../comments/littleApp/AllComment'
+import Weather from '../comments/littleApp/Weather'
 
 export default class Routes extends Component  {
   constructor(props) {
@@ -58,6 +65,20 @@ export default class Routes extends Component  {
       return (<AppStorage navigator={this.props.nav} data={this.props.data} title="AppStorage"/ >);
     }else if(this.props.id=='DetailShow'){
       return (<DetailShow navigator={this.props.nav} data={this.props.data} title="DetailShow"/ >);
+    }else if(this.props.id=='Clock'){
+      return (<Clock navigator={this.props.nav} data={this.props.data} title="Clock"/ >);
+    }else if(this.props.id=='PassLock'){
+      return (<PassLock navigator={this.props.nav} data={this.props.data} title="PassLock"/ >);
+    }else if(this.props.id=='TouchMove'){
+      return (<TouchMove navigator={this.props.nav} data={this.props.data} title="TouchMove"/ >);
+    }else if(this.props.id=='TwiterUI'){
+      return (<TwiterUI navigator={this.props.nav} data={this.props.data} title="TwiterUI"/ >);
+    }else if(this.props.id=='Swip'){
+      return (<Swip navigator={this.props.nav} data={this.props.data} title="Swip"/ >);
+    }else if(this.props.id=='AllComment'){
+      return (<AllComment navigator={this.props.nav} data={this.props.data} title="AllComment"/ >);
+    }else if(this.props.id=='Weather'){
+      return (<Weather navigator={this.props.nav} data={this.props.data} title="Weather"/ >);
     }
 
   }
