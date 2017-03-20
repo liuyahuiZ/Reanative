@@ -114,6 +114,51 @@ export default class AllComment extends Component {
           color: "#666",
           hideNav: true,
           route:'Setting'
+        },{
+          key: 11,
+          title: "Location",
+          isFA: false,
+          icon: "md-pin",
+          size: 50,
+          color: "#66A0E0",
+          hideNav: true,
+          route:'Location'
+        },{
+          key: 12,
+          title: "SildMenu",
+          isFA: true,
+          icon: "th-list",
+          size: 50,
+          color: "#66A0E0",
+          hideNav: true,
+          route:'SildMenu'
+        },{
+          key: 13,
+          title: "SearchBar",
+          isFA: true,
+          icon: "search",
+          size: 50,
+          color: "#66A0E0",
+          hideNav: true,
+          route:'SearchBar'
+        },{
+          key: 14,
+          title: "TouchId",
+          isFA: true,
+          icon: "hand-pointer-o",
+          size: 50,
+          color: "#E58C7C",
+          hideNav: true,
+          route:'TouchId'
+        },{
+          key: 15,
+          title: "ImagePicker",
+          isFA: true,
+          icon: "image",
+          size: 30,
+          color: "#66A0E0",
+          hideNav: true,
+          route:'ImagePicker'
         }]
 
     }

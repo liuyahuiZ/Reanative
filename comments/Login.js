@@ -57,6 +57,7 @@ export default class Login extends Component {
                 onChangeText={(password) => this.setState({password})}
                 placeholder='请输入密码'
                 value={this.state.password}
+                secureTextEntry={true}
               />
               </View>
             </View>

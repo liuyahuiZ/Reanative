@@ -21,6 +21,11 @@ import TwiterUI from '../comments/littleApp/TwiterUI'
 import Swip from '../comments/littleApp/Swip'
 import AllComment from '../comments/littleApp/AllComment'
 import Weather from '../comments/littleApp/Weather'
+import Location from '../comments/littleApp/Location'
+import SildMenu from '../comments/littleApp/SildMenu'
+import SearchBar from '../comments/littleApp/SearchBar'
+import TouchId from '../comments/littleApp/TouchId'
+import ImagePicker from '../comments/littleApp/ImagePicker'
 
 export default class Routes extends Component  {
   constructor(props) {
@@ -79,6 +84,16 @@ export default class Routes extends Component  {
       return (<AllComment navigator={this.props.nav} data={this.props.data} title="AllComment"/ >);
     }else if(this.props.id=='Weather'){
       return (<Weather navigator={this.props.nav} data={this.props.data} title="Weather"/ >);
+    }else if(this.props.id=='Location'){
+      return (<Location navigator={this.props.nav} data={this.props.data} title="Location"/ >);
+    }else if(this.props.id=='SildMenu'){
+      return (<SildMenu navigator={this.props.nav} data={this.props.data} title="SildMenu"/ >);
+    }else if(this.props.id=='SearchBar'){
+      return (<SearchBar navigator={this.props.nav} data={this.props.data} title="SearchBar"/ >);
+    }else if(this.props.id=='TouchId'){
+      return (<TouchId navigator={this.props.nav} data={this.props.data} title="TouchId"/ >);
+    }else if(this.props.id=='ImagePicker'){
+      return (<ImagePicker navigator={this.props.nav} data={this.props.data} title="ImagePicker"/ >);
     }
 
   }

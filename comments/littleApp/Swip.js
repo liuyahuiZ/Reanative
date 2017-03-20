@@ -108,7 +108,7 @@ class SwipeCard extends Component{
 class Cards extends Component{
   constructor() {
     super();
-    const imgs = ["minion1","minion2","minion3","minion4"];
+    const imgs = ["../../img/tabacon/sjkq.png","../../img/banner/bn3.png","../../img/tabacon/dfb.png","../../img/tabacon/poiap.png"];
     const names = ["Stuart","Bob","Kevin","Dave","Jerry"];
 
     this.state = {imgs,names,};

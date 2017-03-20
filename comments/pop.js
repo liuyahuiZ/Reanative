@@ -4,13 +4,15 @@ import { View,ScrollView, Text,StyleSheet, TouchableHighlight,Animated,
 import style from '../service/styles'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Header from './Header'
+import MsgConfirm from './Msgpop/msgconfirm'
+import Alerts from './Msgpop/Alerts'
 const styles=style.styles
 export default class Pop extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      modalVisible: false,
-    spinValue: new Animated.Value(0),};
+    modalVisible: false,
+    };
   }
   toMain(){
     this.props.navigator.pop();
@@ -18,26 +20,11 @@ export default class Pop extends Component {
   setModalVisible(visible) {
     this.setState({modalVisible: visible});
   }
-  componentDidMount () {
-    this.state.spinValue.setValue(1)
+  showConfirm(){
+    this.refs.getConfirm.doAnimate();
   }
-  doAnimate(){
-    Animated.spring(
-      this.state.spinValue,
-      {
-        toValue: 1,
-        friction: 1,
-      }
-    ).start()
-  }
-  hideAnimate(){
-    Animated.spring(
-      this.state.spinValue,
-      {
-        toValue: 0,
-        friction: 1,
-      }
-    ).start()
+  showAlert(){
+    this.refs.getAlert.doAnimate();
   }
   render() {
     return (
@@ -50,31 +37,19 @@ export default class Pop extends Component {
           <Text>Show Modal</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.doAnimate.bind(this)} style={[styles.padding10,styles.flexCenter,styles.alignItemsCenter]}>
+        <TouchableOpacity onPress={this.showConfirm.bind(this)} style={[styles.padding10,styles.flexCenter,styles.alignItemsCenter]}>
           <View style={[styles.smallButtom,styles.borderRadiusSmial,styles.bgBottonBlue]}>
           <Text>Show Animate</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.hideAnimate.bind(this)} style={[styles.padding10,styles.flexCenter,styles.alignItemsCenter]}>
+        <TouchableOpacity onPress={this.showAlert.bind(this)} style={[styles.padding10,styles.flexCenter,styles.alignItemsCenter]}>
           <View style={[styles.smallButtom,styles.borderRadiusSmial,styles.bgBottonBlue]}>
-          <Text>Hide Animate</Text>
+          <Text>Show Alert</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={this.hideAnimate.bind(this)} style={[styles.padding10,styles.flexCenter,styles.alignItemsCenter]}>
-          <View style={[styles.smallButtom,styles.borderRadiusSmial,styles.bgBottonBlue]}>
-          <Text>Hide Animate</Text>
-          </View>
-        </TouchableOpacity>
-        <Animated.View style={[{
-            transform: [
-              {scale: this.state.spinValue
-             },]
-             }]}>
-             <View style={[styles.flexCenter,styles.alignItemsCenter,styles.popUp]}>
-                <Icon name='spinner' color='black' size={20}></Icon>
-             </View>
-        </Animated.View>
       </ScrollView>
+      <MsgConfirm ref="getConfirm" title={"Confirm"} content={"title is a team, and saiohasd, asdaiiw adksaj asdasdasdssdasd  asdsad asdasdasdssdasd  asdsad"}/>
+      <Alerts ref="getAlert" title={"Alert"} content={"title is a team, and saiohasd, asdaiiw"}/>
 
         <Modal
           animationType={"slide"} transparent={false}
