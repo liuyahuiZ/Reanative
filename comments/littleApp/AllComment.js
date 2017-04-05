@@ -159,6 +159,15 @@ export default class AllComment extends Component {
           color: "#66A0E0",
           hideNav: true,
           route:'ImagePicker'
+        },{
+          key: 16,
+          title: "Cart",
+          isFA: true,
+          icon: "cart-plus",
+          size: 40,
+          color: "#F96C43",
+          hideNav: true,
+          route:'Cart'
         }]
 
     }

@@ -14,6 +14,7 @@ import MyCharts from '../comments/MyCharts'
 import Setting from '../comments/Setting'
 import AppStorage from '../comments/AppStorage'
 import DetailShow from '../comments/DetailShow'
+import Cart from '../comments/cart'
 import Clock from '../comments/Clock'
 import PassLock from '../comments/littleApp/PassLock'
 import TouchMove from '../comments/littleApp/TouchMove'
@@ -94,6 +95,8 @@ export default class Routes extends Component  {
       return (<TouchId navigator={this.props.nav} data={this.props.data} title="TouchId"/ >);
     }else if(this.props.id=='ImagePicker'){
       return (<ImagePicker navigator={this.props.nav} data={this.props.data} title="ImagePicker"/ >);
+    }else if(this.props.id=='Cart'){
+      return (<Cart navigator={this.props.nav} data={this.props.data} title="Cart"/ >);
     }
 
   }

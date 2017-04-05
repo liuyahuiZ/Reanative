@@ -134,13 +134,15 @@ export default class Cart extends Component {
         let value = this.state.value;
         let comes='my cart'
         return (
-            <View style={style.container}>
+          <View style={styles.detailContainView}>
+            <ScrollView style={styles.hasHeader}>
               <Product  productArr={this.state.productArr} callbackParent={this.addCart.bind(this)}></Product>
               <Cartlist  CartArr={this.state.CartArr} DelCount={this.delCart.bind(this)} AddCount={this.addCart.bind(this)}></Cartlist>
               <View style={{flex:1,padding:10,backgroundColor:'#FD7C40'}}>
                 <Text>总计：$ {this.state.AmountOfCart}</Text>
               </View>
-            </View>
+            </ScrollView>
+          </View>
             )
     }
 }
